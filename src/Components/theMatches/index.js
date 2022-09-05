@@ -82,13 +82,13 @@ const TheMatches = () => {
                                         >
                                             All
                                         </div>
-                                        <div className={`option ${state.playedFilter === 'yes' ? 'active' : ''}`}
-                                            onClick={()=> showPlayed('yes')}
+                                        <div className={`option ${state.playedFilter === 'Yes' ? 'active' : ''}`}
+                                            onClick={()=> showPlayed('Yes')}
                                         >
                                             Played
                                         </div>
-                                        <div className={`option ${state.playedFilter === 'no' ? 'active' : ''}`}
-                                            onClick={()=> showPlayed('no')}
+                                        <div className={`option ${state.playedFilter === 'No' ? 'active' : ''}`}
+                                            onClick={()=> showPlayed('No')}
                                         >
                                             Not Played
                                         </div>
