@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import RoutesFunc from './routes'
+import './Resources/css/app.css'
 
+import {firebase} from './firebase'
+
+
+const App= (props) => {
+    return (
+        <RoutesFunc {...props}/>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+firebase.auth().onAuthStateChanged((user)=>{//remembers user if he was logged in previously
+    root.render(
+        <App user={user}/>
+    );
+})
