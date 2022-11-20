@@ -54,7 +54,12 @@ const Header = ({user}) => {
                                 }}>Logout</Button>
                     
                 </div>
-                    : null
+                    : 
+                <div>
+                    <Link to='/dashboard'>
+                        <Button color="inherit">Dashboard</Button>
+                    </Link>
+                </div>
             } 
            
 
